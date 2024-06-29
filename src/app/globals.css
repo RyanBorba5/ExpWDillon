@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) { /* CSS for Dark Mode */
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.maincontainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  gap: 14px;
+  justify-content: center;
+  width: 100%;
+}
+
+.containerentry {
+  box-sizing: border-box;
+  background-color: #404040;
+  padding: 5px;
+  align-items: center;
+  width: 100%;
+  margin: 0px;
+}
+
+.containerentry img {
+  width: 100%;
+  height: 300px;
+  display: block; /* Removes bottom space/gap */
+  border: solid;
+  border-radius: 15px;
+  border-color: black;
+  margin: 0px;
+  padding: 0px;
+}
